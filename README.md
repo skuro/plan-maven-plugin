@@ -3,7 +3,7 @@ Plan Maven Plugin
 
 Execution plan made easy.
 
-The development of this simple plugin stems from a [question][1] on SO. The idea is to have maven providing a more
+The development of this simple plugin stems from a [question](http://stackoverflow.com/questions/10331462/maven-execution-plan) on SO. The idea is to have maven providing a more
 succint feedback on the execution plan, without the need to run through the whole logs to figure out what did it do.
 
 Usage
@@ -25,5 +25,3 @@ This is what a normal invokation would look like:
     [INFO]     [test] org.apache.maven.plugins:maven-surefire-plugin:test
     [INFO]     [package] org.apache.maven.plugins:maven-jar-plugin:jar
     [INFO]     [install] org.apache.maven.plugins:maven-install-plugin:install
-
-[1] http://stackoverflow.com/questions/10331462/maven-execution-plan
