@@ -11,7 +11,7 @@ Usage
 
 This is what a normal invokation would look like:
 
-    $ mvn plan:plan clean javadoc
+    $ mvn plan:plan clean javadoc:javadoc package install site:site
     [...]
     [INFO] --- plan-maven-plugin:1.0-SNAPSHOT:plan (default-cli) @ plan-maven-plugin ---
     [INFO] Execution plan:
