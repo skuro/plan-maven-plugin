@@ -1,0 +1,11 @@
+<component-set>
+    <components>
+        <component>
+            <role>tk.skuro.maven.plan.MavenExecutionPlanRenderer</role>
+            <role-hint>default</role-hint>
+            <implementation>
+                tk.skuro.maven.plan.JMustacheMavenExecutionPlanRenderer
+            </implementation>
+        </component>
+    </components>
+</component-set>
