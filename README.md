@@ -13,7 +13,36 @@ This is what a normal invokation would look like:
 
     $ mvn plan:plan clean javadoc:javadoc package install site:site
     [...]
-    [INFO] --- plan-maven-plugin:1.0-SNAPSHOT:plan (default-cli) @ plan-maven-plugin ---
+    [INFO] --- plan-maven-plugin:1.0:plan (default-cli) @ plan-maven-plugin ---
+    [INFO]
+    [INFO] Current lifecycle:
+    [INFO]     pre-clean
+    [INFO]     clean
+    [INFO]     post-clean
+    [INFO]     validate
+    [INFO]     initialize
+    [INFO]     generate-sources
+    [INFO]     process-sources
+    [INFO]     generate-resources
+    [INFO]     process-resources
+    [INFO]     compile
+    [INFO]     process-classes
+    [INFO]     generate-test-sources
+    [INFO]     process-test-sources
+    [INFO]     generate-test-resources
+    [INFO]     process-test-resources
+    [INFO]     test-compile
+    [INFO]     process-test-classes
+    [INFO]     test
+    [INFO]     prepare-package
+    [INFO]     package
+    [INFO]     pre-integration-test
+    [INFO]     integration-test
+    [INFO]     post-integration-test
+    [INFO]     verify
+    [INFO]     install
+    [INFO]     deploy
+    [INFO]
     [INFO] Execution plan:
     [INFO]     [-] tk.skuro:plan-maven-plugin:plan (default-cli)
     [INFO]     [clean] org.apache.maven.plugins:maven-clean-plugin:clean (default-clean)
@@ -38,3 +67,4 @@ This is what a normal invokation would look like:
     [INFO]     [package] org.apache.maven.plugins:maven-plugin-plugin:addPluginArtifactMetadata (default-addPluginArtifactMetadata)
     [INFO]     [install] org.apache.maven.plugins:maven-install-plugin:install (default-install)
     [INFO]     [-] org.apache.maven.plugins:maven-site-plugin:site (default-cli)
+    [INFO]
