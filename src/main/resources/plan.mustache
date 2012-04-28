@@ -1,4 +1,10 @@
-Execution plan [{{#plan.phasesInExecutionPlan}} {{this}} {{/plan.phasesInExecutionPlan}}]:
+
+{{#phases}}Current lifecycle:
+    {{#plan.phasesInExecutionPlan}}{{this}}
+    {{/plan.phasesInExecutionPlan}}
+{{/phases}}
+Execution plan:
 {{#plan}}
     [{{lifecyclePhase}}] {{mojoExecution.groupId}}:{{mojoExecution.artifactId}}:{{mojoExecution.goal}} ({{mojoExecution.executionId}})
 {{/plan}}
+
