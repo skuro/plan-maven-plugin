@@ -68,3 +68,12 @@ This is what a normal invokation would look like:
     [INFO]     [install] org.apache.maven.plugins:maven-install-plugin:install (default-install)
     [INFO]     [-] org.apache.maven.plugins:maven-site-plugin:site (default-cli)
     [INFO]
+
+Alternatively, you can specify a set of commands without actually executing them:
+
+    $ mvn plan:plan -Dcmds=jar:jar
+    [INFO] --- plan-maven-plugin:1.1-SNAPSHOT:plan (default-cli) @ plan-maven-plugin ---
+    [INFO]
+    [INFO] Execution plan:
+    [INFO]     [-] org.apache.maven.plugins:maven-jar-plugin:jar (default-cli)
+    [INFO]
