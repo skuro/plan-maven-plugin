@@ -87,8 +87,7 @@ public class PlanMojo extends AbstractMojo
         outputPlanForSession(actualSession);
     }
     
-    private MavenSession createCustomSession()
-    {
+    private MavenSession createCustomSession() {
         final MavenExecutionRequest request =
                 DefaultMavenExecutionRequest.copy(session.getRequest());
         request.setGoals(commands);
