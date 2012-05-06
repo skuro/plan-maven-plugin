@@ -13,7 +13,7 @@ This is what a normal invokation would look like:
 
     $ mvn plan:plan clean javadoc:javadoc package install site:site
     [...]
-    [INFO] --- plan-maven-plugin:1.0:plan (default-cli) @ plan-maven-plugin ---
+    [INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
     [INFO]
     [INFO] Current lifecycle:
     [INFO]     pre-clean
@@ -71,8 +71,8 @@ This is what a normal invokation would look like:
 
 Alternatively, you can specify a set of commands without actually executing them:
 
-    $ mvn plan:plan -Dcmds=jar:jar
-    [INFO] --- plan-maven-plugin:1.1-SNAPSHOT:plan (default-cli) @ plan-maven-plugin ---
+    $ mvn plan:plan -Dgoals=jar:jar
+    [INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
     [INFO]
     [INFO] Execution plan:
     [INFO]     [-] org.apache.maven.plugins:maven-jar-plugin:jar (default-cli)
