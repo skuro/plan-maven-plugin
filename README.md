@@ -9,7 +9,17 @@ succint feedback on the execution plan, without the need to run through the whol
 Usage
 =====
 
-This is what a normal invokation would look like:
+You can specify a set of goals without actually executing them:
+
+    $ mvn plan:plan -Dgoals=jar:jar
+    [INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
+    [INFO]
+    [INFO] Execution plan:
+    [INFO]     [-] org.apache.maven.plugins:maven-jar-plugin:jar (default-cli)
+    [INFO]
+
+You can also run it as part of the normal build, letting it log
+the plan along with executing the build itself:
 
     $ mvn plan:plan clean javadoc:javadoc package install site:site
     [...]
@@ -69,11 +79,3 @@ This is what a normal invokation would look like:
     [INFO]     [-] org.apache.maven.plugins:maven-site-plugin:site (default-cli)
     [INFO]
 
-Alternatively, you can specify a set of commands without actually executing them:
-
-    $ mvn plan:plan -Dgoals=jar:jar
-    [INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
-    [INFO]
-    [INFO] Execution plan:
-    [INFO]     [-] org.apache.maven.plugins:maven-jar-plugin:jar (default-cli)
-    [INFO]
