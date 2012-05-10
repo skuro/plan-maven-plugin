@@ -6,6 +6,8 @@ Execution plan made easy.
 The development of this simple plugin stems from a [question](http://stackoverflow.com/questions/10331462/maven-execution-plan) on SO. The idea is to have maven providing a more
 succint feedback on the execution plan, without the need to run through the whole logs to figure out what did it do.
 
+**NOTE:** only available for Maven3
+
 Usage
 =====
 
