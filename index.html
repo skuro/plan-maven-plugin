@@ -65,6 +65,67 @@
 <pre><code>$ mvn plan:plan clean javadoc:jar sources:jar package gpg:sign
 </code></pre>
 
+<p>Sample output:</p>
+
+<pre><code>$ mvn plan:plan clean javadoc:javadoc package install site:site
+[...]
+[INFO] --- plan-maven-plugin:1.1:plan (default-cli) @ plan-maven-plugin ---
+[INFO]
+[INFO] Current lifecycle:
+[INFO]     pre-clean
+[INFO]     clean
+[INFO]     post-clean
+[INFO]     validate
+[INFO]     initialize
+[INFO]     generate-sources
+[INFO]     process-sources
+[INFO]     generate-resources
+[INFO]     process-resources
+[INFO]     compile
+[INFO]     process-classes
+[INFO]     generate-test-sources
+[INFO]     process-test-sources
+[INFO]     generate-test-resources
+[INFO]     process-test-resources
+[INFO]     test-compile
+[INFO]     process-test-classes
+[INFO]     test
+[INFO]     prepare-package
+[INFO]     package
+[INFO]     pre-integration-test
+[INFO]     integration-test
+[INFO]     post-integration-test
+[INFO]     verify
+[INFO]     install
+[INFO]     deploy
+[INFO]
+[INFO] Execution plan:
+[INFO]     [-] tk.skuro:plan-maven-plugin:plan (default-cli)
+[INFO]     [clean] org.apache.maven.plugins:maven-clean-plugin:clean (default-clean)
+[INFO]     [-] org.apache.maven.plugins:maven-javadoc-plugin:javadoc (default-cli)
+[INFO]     [validate] org.apache.maven.plugins:maven-enforcer-plugin:enforce (enforce-maven)
+[INFO]     [generate-resources] org.apache.maven.plugins:maven-plugin-plugin:descriptor (default-descriptor)
+[INFO]     [process-resources] org.apache.maven.plugins:maven-resources-plugin:resources (default-resources)
+[INFO]     [compile] org.apache.maven.plugins:maven-compiler-plugin:compile (default-compile)
+[INFO]     [process-test-resources] org.apache.maven.plugins:maven-resources-plugin:testResources (default-testResources)
+[INFO]     [test-compile] org.apache.maven.plugins:maven-compiler-plugin:testCompile (default-testCompile)
+[INFO]     [test] org.apache.maven.plugins:maven-surefire-plugin:test (default-test)
+[INFO]     [package] org.apache.maven.plugins:maven-jar-plugin:jar (default-jar)
+[INFO]     [package] org.apache.maven.plugins:maven-plugin-plugin:addPluginArtifactMetadata (default-addPluginArtifactMetadata)
+[INFO]     [validate] org.apache.maven.plugins:maven-enforcer-plugin:enforce (enforce-maven)
+[INFO]     [generate-resources] org.apache.maven.plugins:maven-plugin-plugin:descriptor (default-descriptor)
+[INFO]     [process-resources] org.apache.maven.plugins:maven-resources-plugin:resources (default-resources)
+[INFO]     [compile] org.apache.maven.plugins:maven-compiler-plugin:compile (default-compile)
+[INFO]     [process-test-resources] org.apache.maven.plugins:maven-resources-plugin:testResources (default-testResources)
+[INFO]     [test-compile] org.apache.maven.plugins:maven-compiler-plugin:testCompile (default-testCompile)
+[INFO]     [test] org.apache.maven.plugins:maven-surefire-plugin:test (default-test)
+[INFO]     [package] org.apache.maven.plugins:maven-jar-plugin:jar (default-jar)
+[INFO]     [package] org.apache.maven.plugins:maven-plugin-plugin:addPluginArtifactMetadata (default-addPluginArtifactMetadata)
+[INFO]     [install] org.apache.maven.plugins:maven-install-plugin:install (default-install)
+[INFO]     [-] org.apache.maven.plugins:maven-site-plugin:site (default-cli)
+[INFO]
+</code></pre>
+
 <h3>Authors and Contributors</h3>
 
 <ul>
