@@ -40,12 +40,20 @@
             <email>skuro@skuro.tk</email>
             <url>http://skuro.tk</url>
             <roles>
-                <role>developer</role>
+                <role>maintainer</role>
+                <role>contributor</role>
             </roles>
             <timezone>+1</timezone>
             <properties>
                 <picUrl>http://2.gravatar.com/avatar/7b21764e687cc434d41560b147ea292b?size=420</picUrl>
             </properties>
+        </developer>
+        <developer>
+            <id>dcendents</id>
+            <name>Daniel Beland</name>
+            <roles>
+                <role>contributor</role>
+            </roles>
         </developer>
     </developers>
     
