@@ -1,13 +1,37 @@
 Plan Maven Plugin
 =================
 
-Execution plan made easy.
+[![Latest version](https://maven-badges.herokuapp.com/maven-central/tk.skuro/plan-maven-plugin/badge.svg)](http://search.maven.org/#artifactdetails|tk.skuro|plan-maven-plugin|1.2|)
 
-The development of this simple plugin stems from a [question](http://stackoverflow.com/questions/10331462/maven-execution-plan) on SO. The idea is to have maven providing a more
-succint feedback on the execution plan, without the need to run through the whole logs to figure out what did it do.
+Add it to your project POM:
 
-**NOTE:** only available for Maven3
+    <plugins>
+      <plugin>
+        <groupId>tk.skuro</groupId>
+        <artifactId>plan-maven-plugin</artifactId>
+        <version>1.2</version> <!-- use 1.1 if using maven < 3.1.0 -->
+      </plugin>
+    </plugins>
+    
+Or enable it globally in your `settings.xml`:
 
+    <settings>
+      <pluginGroups>
+        <pluginGroup>tk.skuro</pluginGroup>
+      </pluginGroups>
+    </settings>
+
+Execution plans explained
+=========================
+
+When creating complex builds with Maven, which extensively use profiles and activation rules, making sure that plugins execute in the proper order is sometimes a challenge in itself. This plugin queries the Maven machinery to provide a clean and concise report of your build execution plan, including the full list of the steps of the current lifecycle and the plugin executions linked to any lifecycle step.
+
+The reported executions are given in the format:
+
+    [{lifecyle-phase}] {groupId}:{artifactId}:{goal} ({execution-id})
+    
+Where `[-]` indicates that a plugin goal is directly executed instead of being triggered by a lifecycle step.
+    
 Usage
 =====
 
@@ -80,4 +104,3 @@ the plan along with executing the build itself:
     [INFO]     [install] org.apache.maven.plugins:maven-install-plugin:install (default-install)
     [INFO]     [-] org.apache.maven.plugins:maven-site-plugin:site (default-cli)
     [INFO]
-
