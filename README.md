@@ -5,21 +5,25 @@ Plan Maven Plugin
 
 Add it to your project POM:
 
-    <plugins>
-      <plugin>
-        <groupId>tk.skuro</groupId>
-        <artifactId>plan-maven-plugin</artifactId>
-        <version>1.2</version> <!-- use 1.1 if using maven < 3.1.0 -->
-      </plugin>
-    </plugins>
-    
+```xml
+<plugins>
+  <plugin>
+    <groupId>tk.skuro</groupId>
+    <artifactId>plan-maven-plugin</artifactId>
+    <version>1.2</version> <!-- use 1.1 if using maven < 3.1.0 -->
+  </plugin>
+</plugins>
+```
+
 Or enable it globally in your `settings.xml`:
 
-    <settings>
-      <pluginGroups>
-        <pluginGroup>tk.skuro</pluginGroup>
-      </pluginGroups>
-    </settings>
+```xml
+<settings>
+  <pluginGroups>
+    <pluginGroup>tk.skuro</pluginGroup>
+  </pluginGroups>
+</settings>
+```
 
 Execution plans explained
 =========================
