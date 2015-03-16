@@ -50,7 +50,7 @@ public class PlanMojo extends AbstractMojo
     /**
      * The Maven Session Object
      *
-     * @parameter expression="${session}"
+     * @parameter session="session"
      * @required
      * @readonly
      */
@@ -59,7 +59,7 @@ public class PlanMojo extends AbstractMojo
     /**
      * The Maven Project Object
      *
-     * @parameter expression="${project}"
+     * @parameter project="project"
      * @required
      * @readonly
      */
@@ -69,7 +69,7 @@ public class PlanMojo extends AbstractMojo
      * List of commands to use instead of those specified on the command line
      * e.g. "{@code clean,install,war:war}"
      *
-     * @parameter expression="${goals}"
+     * @parameter goals="goals"
      */
     protected List<String> goals = java.util.Collections.emptyList();
 
