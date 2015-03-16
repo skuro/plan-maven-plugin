@@ -1,7 +1,7 @@
 Plan Maven Plugin
 =================
 
-[![Latest version](https://maven-badges.herokuapp.com/maven-central/tk.skuro/plan-maven-plugin/badge.svg)](http://search.maven.org/#artifactdetails|tk.skuro|plan-maven-plugin|1.2|)
+[![Latest version](https://maven-badges.herokuapp.com/maven-central/tk.skuro/plan-maven-plugin/badge.svg)](http://search.maven.org/#artifactdetails|tk.skuro|plan-maven-plugin|1.2|) [![Build Status](https://travis-ci.org/skuro/plan-maven-plugin.svg?branch=master)](https://travis-ci.org/skuro/plan-maven-plugin)
 
 Add it to your project POM:
 
