@@ -15,9 +15,7 @@ public class PlanMojoTest {
     public MojoRule rule = new MojoRule();
 
     @Test
-    public void testSomething()
-            throws Exception
-    {
+    public void testSomething() throws Exception {
         File pom = PlexusTestCase.getTestFile("src/test/resources/pom-all-defaults.xml");
         assertNotNull( pom );
         assertTrue( pom.exists() );

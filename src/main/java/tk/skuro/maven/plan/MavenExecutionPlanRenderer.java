@@ -15,5 +15,5 @@ public interface MavenExecutionPlanRenderer {
      * @param plan The plan to render
      * @return The rendered plan
      */
-    public String render (MavenExecutionPlan plan);
+    String render (MavenExecutionPlan plan);
 }
