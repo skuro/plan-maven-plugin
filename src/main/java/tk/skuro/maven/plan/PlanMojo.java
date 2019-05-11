@@ -12,6 +12,9 @@ import org.apache.maven.lifecycle.internal.TaskSegment;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.logging.Log;
+import org.apache.maven.plugins.annotations.Component;
+import org.apache.maven.plugins.annotations.Mojo;
+import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.project.MavenProject;
 import org.codehaus.plexus.PlexusConstants;
 import org.codehaus.plexus.PlexusContainer;
@@ -19,59 +22,43 @@ import org.codehaus.plexus.context.Context;
 import org.codehaus.plexus.context.ContextException;
 import org.codehaus.plexus.personality.plexus.lifecycle.phase.Contextualizable;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 /**
  * Goal which prints the execution plan
- *
- * @goal plan
  */
-public class PlanMojo extends AbstractMojo
-    implements Contextualizable {
+@Mojo(name = "plan")
+public class PlanMojo extends AbstractMojo implements Contextualizable {
 
-    private Log log;
-
-    /**
-     * @component
-     */
+    @Component
     private LifecycleExecutionPlanCalculator planCalculator;
 
-    /**
-     * @component
-     */
+    @Component
     private LifecycleTaskSegmentCalculator lifecycleTaskSegmentCalculator;
 
-    /**
-     * @component
-     */
+    @Component
     private MavenExecutionPlanRenderer renderer;
 
     /**
      * The Maven Session Object
-     *
-     * @parameter session="session"
-     * @required
-     * @readonly
      */
+    @Parameter(defaultValue = "${session}", required = true, readonly = true)
     private MavenSession session;
 
     /**
      * The Maven Project Object
-     *
-     * @parameter project="project"
-     * @required
-     * @readonly
      */
-    protected MavenProject project;
+    @Parameter(defaultValue = "${project}", required = true, readonly = true)
+    private MavenProject project;
 
     /**
      * List of commands to use instead of those specified on the command line
      * e.g. "{@code clean,install,war:war}"
-     *
-     * @parameter goals="goals"
      */
-    protected List<String> goals = java.util.Collections.emptyList();
+    @Parameter( property = "goals")
+    private List<String> goals;
 
     private PlexusContainer container;
 
@@ -79,7 +66,7 @@ public class PlanMojo extends AbstractMojo
         container = (PlexusContainer)context.get(PlexusConstants.PLEXUS_KEY);
     }
 
-    public void execute() throws MojoExecutionException {
+    public void execute() {
         final MavenSession actualSession = 0 == goals.size() ?
                 session : createCustomSession();
 
@@ -119,11 +106,7 @@ public class PlanMojo extends AbstractMojo
     private void outputPlan(MavenExecutionPlan plan) {
         Scanner scanner = new Scanner(renderer.render(plan));
         while(scanner.hasNextLine()) {
-            log.info(scanner.nextLine());
+            getLog().info(scanner.nextLine());
         }
-    }
-
-    public void setLog(Log log) {
-        this.log = log;
     }
 }
