@@ -58,7 +58,7 @@ public class PlanMojo extends AbstractMojo implements Contextualizable {
      * e.g. "{@code clean,install,war:war}"
      */
     @Parameter( property = "goals")
-    private List<String> goals;
+    private List<String> goals = Collections.emptyList();
 
     private PlexusContainer container;
 

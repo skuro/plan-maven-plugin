@@ -12,8 +12,18 @@
             <plugin>
                 <groupId>tk.skuro</groupId>
                 <artifactId>plan-maven-plugin</artifactId>
-                <version>1.3.0-SNAPSHOT</version>
-                <configuration />
+                <version>1.3-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>plan</id>
+                        <goals>
+                            <goal>plan</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <goals>verify</goals>
+                </configuration>
             </plugin>
         </plugins>
     </build>
