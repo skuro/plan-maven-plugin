@@ -5,12 +5,23 @@ import org.apache.maven.it.Verifier;
 import org.apache.maven.it.util.ResourceExtractor;
 
 import java.io.File;
+import java.util.Map;
+import java.util.Properties;
 
 public class PlanMojoIntegrationTest extends TestCase {
 
     private final static String defaultMavenHome = "/home/linuxbrew/.linuxbrew";
 
     public void setUp(){
+        // just for debugging CI:
+        System.out.println("---------env---------");
+        for(Map.Entry<String, String> env : System.getenv().entrySet()) {
+            System.out.println(env.getKey() + "=" + env.getValue());
+        }
+        System.out.println("---------prop--------");
+        for(Map.Entry<Object, Object> prop : System.getProperties().entrySet()){
+            System.out.println(prop.getKey() + "=" + prop.getValue());
+        }
         if(System.getProperty("maven.home") == null) {
             String m2Home = System.getenv("M2_HOME");
             if(m2Home != null) {
