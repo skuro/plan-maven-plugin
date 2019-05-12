@@ -19,16 +19,14 @@ public class PlanMojoIntegrationTest extends TestCase {
                 System.setProperty("maven.home", defaultMavenHome);
             }
         }
+        System.out.println("Using maven.home=" + System.getProperty("maven.home"));
     }
 
     public void testMyPlugin()
             throws Exception {
         File testDir = ResourceExtractor.simpleExtractResources(getClass(), "/test-project");
 
-        System.getenv("M2_HOME")
-        System.setProperty("maven.home", "/home/linuxbrew/.linuxbrew");
         Verifier verifier = new Verifier(testDir.getAbsolutePath());
-
         verifier.executeGoal("plan:plan");
         verifier.verifyErrorFreeLog();
 
